@@ -1,3 +1,10 @@
+export const SEAT_STATUS = {
+  NO_SEAT: "NO_SEAT",
+  AVAILABLE: "AVAILABLE",
+  BOOKED: "BOOKED",
+  BLOCKED: "BLOCKED"
+};
+
 export const SEAT_ARRANGEMENT = [
   {
     categoryName: "premium",
@@ -8,23 +15,23 @@ export const SEAT_ARRANGEMENT = [
         seats: [
           {
             seatId: "A1",
-            status: "NO_SEAT"
+            status: SEAT_STATUS.NO_SEAT
           },
           {
             seatId: "A2",
-            status: "AVAILABLE"
+            status: SEAT_STATUS.AVAILABLE
           },
           {
             seatId: "A3",
-            status: "AVAILABLE"
+            status: SEAT_STATUS.AVAILABLE
           },
           {
             seatId: "A4",
-            status: "AVAILABLE"
+            status: SEAT_STATUS.AVAILABLE
           },
           {
             seatId: "A5",
-            status: "NO_SEAT"
+            status: SEAT_STATUS.NO_SEAT
           }
         ]
       },
@@ -33,23 +40,23 @@ export const SEAT_ARRANGEMENT = [
         seats: [
           {
             seatId: "B1",
-            status: "NO_SEAT"
+            status: SEAT_STATUS.NO_SEAT
           },
           {
             seatId: "B2",
-            status: "AVAILABLE"
+            status: SEAT_STATUS.AVAILABLE
           },
           {
             seatId: "B3",
-            status: "AVAILABLE"
+            status: SEAT_STATUS.AVAILABLE
           },
           {
             seatId: "B4",
-            status: "AVAILABLE"
+            status: SEAT_STATUS.AVAILABLE
           },
           {
             seatId: "B5",
-            status: "NO_SEAT"
+            status: SEAT_STATUS.NO_SEAT
           }
         ]
       }
@@ -64,23 +71,23 @@ export const SEAT_ARRANGEMENT = [
         seats: [
           {
             seatId: "C1",
-            status: "AVAILABLE"
+            status: SEAT_STATUS.AVAILABLE
           },
           {
             seatId: "C2",
-            status: "AVAILABLE"
+            status: SEAT_STATUS.AVAILABLE
           },
           {
             seatId: "C3",
-            status: "AVAILABLE"
+            status: SEAT_STATUS.AVAILABLE
           },
           {
             seatId: "C4",
-            status: "AVAILABLE"
+            status: SEAT_STATUS.AVAILABLE
           },
           {
             seatId: "C5",
-            status: "AVAILABLE"
+            status: SEAT_STATUS.AVAILABLE
           }
         ]
       },
@@ -89,23 +96,23 @@ export const SEAT_ARRANGEMENT = [
         seats: [
           {
             seatId: "D1",
-            status: "AVAILABLE"
+            status: SEAT_STATUS.AVAILABLE
           },
           {
             seatId: "D2",
-            status: "AVAILABLE"
+            status: SEAT_STATUS.AVAILABLE
           },
           {
             seatId: "D3",
-            status: "AVAILABLE"
+            status: SEAT_STATUS.AVAILABLE
           },
           {
             seatId: "D4",
-            status: "AVAILABLE"
+            status: SEAT_STATUS.AVAILABLE
           },
           {
             seatId: "D5",
-            status: "AVAILABLE"
+            status: SEAT_STATUS.AVAILABLE
           }
         ]
       },
@@ -114,23 +121,23 @@ export const SEAT_ARRANGEMENT = [
         seats: [
           {
             seatId: "E1",
-            status: "AVAILABLE"
+            status: SEAT_STATUS.AVAILABLE
           },
           {
             seatId: "E2",
-            status: "AVAILABLE"
+            status: SEAT_STATUS.AVAILABLE
           },
           {
             seatId: "E3",
-            status: "AVAILABLE"
+            status: SEAT_STATUS.AVAILABLE
           },
           {
             seatId: "E4",
-            status: "AVAILABLE"
+            status: SEAT_STATUS.AVAILABLE
           },
           {
             seatId: "E5",
-            status: "AVAILABLE"
+            status: SEAT_STATUS.AVAILABLE
           }
         ]
       }
