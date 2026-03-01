@@ -18,7 +18,7 @@
   background-color: green;
 }
 
-.seat-booked {
+.seat:disabled {
   background-color: gray;
   cursor: not-allowed;
 }
@@ -36,9 +36,14 @@
 
 .book-seat-btn {
   padding: 0.5rem 1rem;
-  background-color: red;
+  background-color: #b00020;
   color: white;
   border: none;
   margin: 1rem 0;
   cursor: pointer;
+}
+
+.book-seat-btn:disabled {
+  background-color: gray;
+  cursor: not-allowed;
 }

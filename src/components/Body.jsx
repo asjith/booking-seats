@@ -8,8 +8,6 @@ const Body = () => {
   const [seatArrangement, setSeatArrangement] = useState(SEAT_ARRANGEMENT);
 
   const handleSeatClick = (seatSelected) => {
-    if (seatSelected.status === SEAT_STATUS.BOOKED) return;
-
     const newSeatArrangement = seatArrangement.map((category) => ({
       ...category,
       rows: category.rows.map((row) => ({
@@ -39,11 +37,7 @@ const Body = () => {
       }))
     }));
 
-    if (
-      JSON.stringify(seatArrangement) !== JSON.stringify(newSeatArrangement)
-    ) {
-      setSeatArrangement(newSeatArrangement);
-    }
+    setSeatArrangement(newSeatArrangement);
   };
 
   return (

@@ -16,6 +16,7 @@ const Seat = ({ seat }) => {
   return (
     <button
       className={`${seatVisibiltyStyle} ${seatStyle}`}
+      disabled={seat.status === SEAT_STATUS.BOOKED}
       onClick={() => handleSeatClick(seat)}
     ></button>
   );

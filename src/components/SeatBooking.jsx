@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import SeatCategory from "./SeatCategory";
 import { SeatArrangementContext } from "../utils/SeatArrangementContext";
+import { SEAT_STATUS } from "../utils/constants";
 
 const SeatBooking = () => {
   const { seatArrangement, handleBookSeats } = useContext(
@@ -8,6 +9,14 @@ const SeatBooking = () => {
   );
 
   if (!seatArrangement) return null;
+
+  const isSeatSelected = seatArrangement.some((category) => {
+    return category.rows.some((row) => {
+      return row.seats.some((seat) => {
+        return seat.status === SEAT_STATUS.SELECTED;
+      });
+    });
+  });
 
   return (
     <div>
@@ -22,6 +31,7 @@ const SeatBooking = () => {
         <button
           className="book-seat-btn"
           type="button"
+          disabled={!isSeatSelected}
           onClick={handleBookSeats}
         >
           Book Seat
