@@ -3,15 +3,30 @@ import SeatCategory from "./SeatCategory";
 import { SeatArrangementContext } from "../utils/SeatArrangementContext";
 
 const SeatBooking = () => {
-  const { seatArrangement } = useContext(SeatArrangementContext);
+  const { seatArrangement, handleBookSeats } = useContext(
+    SeatArrangementContext
+  );
 
   if (!seatArrangement) return null;
 
   return (
     <div>
-      {seatArrangement.map((category) => {
-        return <SeatCategory key={category.categoryName} category={category} />;
-      })}
+      <div>
+        {seatArrangement.map((category) => {
+          return (
+            <SeatCategory key={category.categoryName} category={category} />
+          );
+        })}
+      </div>
+      <div>
+        <button
+          className="book-seat-btn"
+          type="button"
+          onClick={handleBookSeats}
+        >
+          Book Seat
+        </button>
+      </div>
     </div>
   );
 };
