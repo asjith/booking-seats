@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import SeatCategory from "./SeatCategory";
+import { SeatArrangementContext } from "../utils/SeatArrangementContext";
 
-const SeatBooking = ({ seatArrangment }) => {
+const SeatBooking = () => {
+  const { seatArrangment } = useContext(SeatArrangementContext);
+
+  if (!seatArrangment) return null;
+
   return (
     <div>
       {seatArrangment.map((category) => {
