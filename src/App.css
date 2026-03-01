@@ -2,3 +2,23 @@
   font-family: sans-serif;
   box-sizing: border-box;
 }
+
+.seat {
+  width: 20px;
+  height: 20px;
+  border: 1px solid black;
+}
+.no-seat {
+  visibility: hidden;
+}
+
+.seat-row {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.row {
+  display: flex;
+  gap: 1rem;
+  margin: 0.25rem;
+}
