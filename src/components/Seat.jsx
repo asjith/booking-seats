@@ -3,12 +3,12 @@ import { SeatArrangementContext } from "../utils/SeatArrangementContext";
 import { SEAT_STATUS } from "../utils/constants";
 
 const Seat = ({ seat }) => {
-  const { seatArrangment, setSeatArrangment } = useContext(
+  const { seatArrangement, setSeatArrangement } = useContext(
     SeatArrangementContext
   );
 
   const handleClick = (id) => {
-    const newSeatArrangment = seatArrangment.map((category) => ({
+    const newSeatArrangement = seatArrangement.map((category) => ({
       ...category,
       rows: category.rows.map((row) => ({
         ...row,
@@ -21,17 +21,17 @@ const Seat = ({ seat }) => {
         })
       }))
     }));
-    setSeatArrangment(newSeatArrangment);
+    setSeatArrangement(newSeatArrangement);
   };
 
   const seatVisibiltyStyle = `seat ${seat.status === SEAT_STATUS.NO_SEAT ? "no-seat" : ""}`;
   const seatStyle = seat.status === SEAT_STATUS.SELECTED ? "seat-selected" : "";
 
   return (
-    <div
+    <button
       className={`${seatVisibiltyStyle} ${seatStyle}`}
       onClick={() => handleClick(seat.seatId)}
-    ></div>
+    ></button>
   );
 };
 

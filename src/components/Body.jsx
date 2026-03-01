@@ -4,10 +4,10 @@ import { SEAT_ARRANGEMENT } from "../utils/constants";
 import { SeatArrangementContext } from "../utils/SeatArrangementContext";
 
 const Body = () => {
-  const [seatArrangment, setSeatArrangment] = useState(SEAT_ARRANGEMENT);
+  const [seatArrangement, setSeatArrangement] = useState(SEAT_ARRANGEMENT);
   return (
     <SeatArrangementContext.Provider
-      value={{ seatArrangment, setSeatArrangment }}
+      value={{ seatArrangement, setSeatArrangement }}
     >
       <SeatBooking />
     </SeatArrangementContext.Provider>

@@ -3,13 +3,13 @@ import SeatCategory from "./SeatCategory";
 import { SeatArrangementContext } from "../utils/SeatArrangementContext";
 
 const SeatBooking = () => {
-  const { seatArrangment } = useContext(SeatArrangementContext);
+  const { seatArrangement } = useContext(SeatArrangementContext);
 
-  if (!seatArrangment) return null;
+  if (!seatArrangement) return null;
 
   return (
     <div>
-      {seatArrangment.map((category) => {
+      {seatArrangement.map((category) => {
         return <SeatCategory key={category.categoryName} category={category} />;
       })}
     </div>
