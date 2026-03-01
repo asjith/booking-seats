@@ -16,8 +16,11 @@ const Seat = ({ seat }) => {
   return (
     <button
       className={`${seatVisibiltyStyle} ${seatStyle}`}
+      type="button"
       disabled={seat.status === SEAT_STATUS.BOOKED}
       onClick={() => handleSeatClick(seat)}
+      aria-label={`Seat ${seat.seatId} ${seat.status}`}
+      aria-pressed={seat.status === SEAT_STATUS.SELECTED}
     ></button>
   );
 };

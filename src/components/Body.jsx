@@ -13,11 +13,17 @@ const Body = () => {
       rows: category.rows.map((row) => ({
         ...row,
         seats: row.seats.map((seat) => {
-          return seat.seatId === seatSelected.seatId
-            ? seat.status === SEAT_STATUS.SELECTED
-              ? { ...seat, status: SEAT_STATUS.AVAILABLE }
-              : { ...seat, status: SEAT_STATUS.SELECTED }
-            : seat;
+          if (seat.seatId !== seatSelected.seatId) {
+            return seat;
+          } else {
+            if (seat.status === SEAT_STATUS.SELECTED) {
+              return { ...seat, status: SEAT_STATUS.AVAILABLE };
+            } else if (seat.status === SEAT_STATUS.AVAILABLE) {
+              return { ...seat, status: SEAT_STATUS.SELECTED };
+            } else {
+              return seat;
+            }
+          }
         })
       }))
     }));
