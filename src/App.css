@@ -18,6 +18,11 @@
   background-color: green;
 }
 
+.seat:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
 .seat-row {
   display: flex;
   gap: 0.25rem;
@@ -27,4 +32,18 @@
   display: flex;
   gap: 1rem;
   margin: 0.25rem;
+}
+
+.book-seat-btn {
+  padding: 0.5rem 1rem;
+  background-color: #b00020;
+  color: white;
+  border: none;
+  margin: 1rem 0;
+  cursor: pointer;
+}
+
+.book-seat-btn:disabled {
+  background-color: gray;
+  cursor: not-allowed;
 }

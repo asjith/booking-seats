@@ -3,34 +3,24 @@ import { SeatArrangementContext } from "../utils/SeatArrangementContext";
 import { SEAT_STATUS } from "../utils/constants";
 
 const Seat = ({ seat }) => {
-  const { seatArrangement, setSeatArrangement } = useContext(
-    SeatArrangementContext
-  );
-
-  const handleClick = (id) => {
-    const newSeatArrangement = seatArrangement.map((category) => ({
-      ...category,
-      rows: category.rows.map((row) => ({
-        ...row,
-        seats: row.seats.map((seat) => {
-          return seat.seatId === id
-            ? seat.status === SEAT_STATUS.SELECTED
-              ? { ...seat, status: SEAT_STATUS.AVAILABLE }
-              : { ...seat, status: SEAT_STATUS.SELECTED }
-            : seat;
-        })
-      }))
-    }));
-    setSeatArrangement(newSeatArrangement);
-  };
+  const { handleSeatClick } = useContext(SeatArrangementContext);
 
   const seatVisibiltyStyle = `seat ${seat.status === SEAT_STATUS.NO_SEAT ? "no-seat" : ""}`;
-  const seatStyle = seat.status === SEAT_STATUS.SELECTED ? "seat-selected" : "";
+  const seatStyle =
+    seat.status === SEAT_STATUS.SELECTED
+      ? "seat-selected"
+      : seat.status === SEAT_STATUS.BOOKED
+        ? "seat-booked"
+        : "";
 
   return (
     <button
       className={`${seatVisibiltyStyle} ${seatStyle}`}
-      onClick={() => handleClick(seat.seatId)}
+      type="button"
+      disabled={seat.status === SEAT_STATUS.BOOKED}
+      onClick={() => handleSeatClick(seat)}
+      aria-label={`Seat ${seat.seatId} ${seat.status}`}
+      aria-pressed={seat.status === SEAT_STATUS.SELECTED}
     ></button>
   );
 };
