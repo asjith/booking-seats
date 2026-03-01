@@ -2,7 +2,7 @@ export const SEAT_STATUS = {
   NO_SEAT: "NO_SEAT",
   AVAILABLE: "AVAILABLE",
   BOOKED: "BOOKED",
-  BLOCKED: "BLOCKED"
+  SELECTED: "SELECTED"
 };
 
 export const SEAT_ARRANGEMENT = [

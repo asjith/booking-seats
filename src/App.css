@@ -7,9 +7,15 @@
   width: 20px;
   height: 20px;
   border: 1px solid black;
+  cursor: pointer;
 }
+
 .no-seat {
   visibility: hidden;
+}
+
+.seat-selected {
+  background-color: green;
 }
 
 .seat-row {

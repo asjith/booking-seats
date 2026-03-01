@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import SeatCategory from "./SeatCategory";
+import { SeatArrangementContext } from "../utils/SeatArrangementContext";
 
-const SeatBooking = ({ seatArrangment }) => {
+const SeatBooking = () => {
+  const { seatArrangement } = useContext(SeatArrangementContext);
+
+  if (!seatArrangement) return null;
+
   return (
     <div>
-      {seatArrangment.map((category) => {
+      {seatArrangement.map((category) => {
         return <SeatCategory key={category.categoryName} category={category} />;
       })}
     </div>
