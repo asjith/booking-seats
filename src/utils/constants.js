@@ -1,4 +1,4 @@
-export const SEAT_ARRANGMENT = [
+export const SEAT_ARRANGEMENT = [
   {
     categoryName: "premium",
     price: 100,
